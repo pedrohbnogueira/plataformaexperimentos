@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plataforma de Experimentos Digitais em Psicologia</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="header-logo">
+                <img src="logo_uemg.png" alt="Logo UEMG - Universidade do Estado de Minas Gerais" class="logo-universidade" />
+            </div>
+            <section class="hero-section">
+                <h1>Plataforma de Experimentos Digitais em Psicologia</h1>
+                <p class="hero-description">Ambiente digital para investigação, aplicação e análise de processos psicológicos básicos.</p>
+            </section>
+        </div>
+    </header>
+
+    <div class="container" id="secao-apresentacao">
+        <section id="sobre" class="presentation-section">
+            <h2 class="section-title">Apresentação</h2>
+            <p>Explore nossa biblioteca de tarefas experimentais, guias interativos e materiais de apoio voltados para o ensino e aprendizagem de processos psicológicos básicos. Desenvolvido para dar suporte a pesquisadores, estudantes e participantes de experimentos.</p>
+        </section>
+
+        <section class="painel-institucional">
+            <a href="#equipe" class="card-institucional" id="link-equipe">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Equipe de Projeto</h3>
+                    <p>Conheça os docentes, pesquisadores e desenvolvedores responsáveis pela plataforma.</p>
+                </div>
+            </a>
+
+            <a href="#" class="card-institucional" id="link-forum" onclick="event.preventDefault(); alert('O Fórum Interativo está em fase de estruturação e será liberado em breve!');">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Fórum Interativo</h3>
+                    <p>Participe de discussões, debata os resultados dos testes e colabore com a comunidade (Breve).</p>
+                </div>
+            </a>
+
+            <a href="#contato" class="card-institucional" id="link-contato">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Contato & Suporte</h3>
+                    <p>Fale com o laboratório, tire dúvidas sobre os testes ou solicite suporte técnico.</p>
+                </div>
+            </a>
+        </section>
+
+        <section id="destaque-youtube" class="youtube-highlight-section">
+            <div class="youtube-grid">
+                <div class="youtube-info">
+                    <h2 class="section-title">Nosso Canal no YouTube</h2>
+                    <p>Acompanhe as produções audiovisuais do nosso grupo de pesquisa. Publicamos periodicamente conteúdos educativos fundamentais para a sua formação acadêmica, incluindo tutoriais passo a passo sobre a utilização das ferramentas, guias detalhados de análises estatísticas e apresentações de experimentos e artigos científicos desenvolvidos pela nossa comunidade da UEMG.</p>
+                    <a href="https://www.youtube.com/watch?v=H-7FsUDOrvE" target="_blank" class="main-youtube-link">Visitar Canal Oficial →</a>
+                </div>
+                <div class="youtube-video-side">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/H-7FsUDOrvE" 
+                            title="Matéria Institucional UEMG - Destaque do Canal" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ferramentas" class="tools-section">
+            <h2 class="section-title">Ferramentas de Análise & Pesquisa</h2>
+            <div class="tools-grid">
+                
+                <div class="card-ferramenta">
+                    <div class="tool-header">
+                        <span class="tool-tag">Execução</span>
+                        <h3>PsyToolkit</h3>
+                    </div>
+                    <p>Plataforma de software livre voltada para a programação e execução de experimentos psicológicos cognitivos e questionários online de alta precisão temporal.</p>
+                    <a href="https://www.psytoolkit.org/" target="_blank" class="tool-link">Acessar PsyToolkit →</a>
+                </div>
+
+                <div class="card-ferramenta">
+                    <div class="tool-header">
+                        <span class="tool-tag">Estatística</span>
+                        <h3>Linguagem R</h3>
+                    </div>
+                    <p>Ambiente computacional e linguagem de programação de código aberto voltada para a computação estatística, manipulação de dados e geração de gráficos de alto nível.</p>
+                    <a href="https://www.r-project.org/" target="_blank" class="tool-link">Acessar Projeto R →</a>
+                </div>
+
+                <div class="card-ferramenta">
+                    <div class="tool-header">
+                        <span class="tool-tag">Estatística</span>
+                        <h3>JASP</h3>
+                    </div>
+                    <p>Alternativa moderna de código aberto ao SPSS. Desenvolvido na Universidade de Amsterdã, oferece uma interface gráfica amigável para análises estatísticas clássicas e bayesianas.</p>
+                    <a href="https://jasp-stats.org/" target="_blank" class="tool-link">Acessar JASP →</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <main class="container" id="conteudo-principal">
+        <h2 class="section-title">Experimentos</h2>
+        <section class="features-section">
+            
+            <article data-experimento="posner">
+                <h3>Paradigma das Pistas de Posner</h3>
+                <p>Mede a atenção visual e o processamento de pistas espaciais.</p>
+                <span class="badge">Atenção</span>
+            </article>
+
+            <article data-experimento="stroop">
+                <h3>Efeito Stroop</h3>
+                <p>Avalia a interferência cognitiva e o tempo de reação ao conflito.</p>
+                <span class="badge">Funções Executivas</span>
+            </article>
+
+            <article data-experimento="stroop-emocional">
+                <h3>Efeito Stroop Emocional</h3>
+                <p>Mede a interferência de palavras com forte carga emocional na atenção.</p>
+                <span class="badge">Emoção e Cognição</span>
+            </article>
+
+            <article data-experimento="dot-probe">
+                <h3>Tarefa &quot;dot-probe&quot;</h3>
+                <p>Avalia o viés atencional frente a stimuli visuais ameaçadores.</p>
+                <span class="badge">Atenção</span>
+            </article>
+
+            <article data-experimento="brilho">
+                <h3>Limiar de detecção de brilho</h3>
+                <p>Determina o menor nível de intensidade de luz percebido pelo participante.</p>
+                <span class="badge">Percepção</span>
+            </article>
+
+            <article data-experimento="labirinto">
+                <h3>Labirinto escuro</h3>
+                <p>Investiga a navegação espacial e a formação de mapas cognitivos cegos.</p>
+                <span class="badge">Cognição Espacial</span>
+            </article>
+
+            <article data-experimento="sperling">
+                <h3>Tarefa de Sperling</h3>
+                <p>Investiga a capacidade e a duração do registro na memória icônica.</p>
+                <span class="badge">Memória</span>
+            </article>
+
+            <article data-experimento="drm">
+                <h3>Paradigma DRM</h3>
+                <p>Estuda a criação de falsas memórias por meio de listas de palavras associadas.</p>
+                <span class="badge">Memória</span>
+            </article>
+
+            <article data-experimento="priming-semantico">
+                <h3>Facilitação (priming) semântica</h3>
+                <p>Mede a velocidade de processamento de palavras conceitualmente ligadas.</p>
+                <span class="badge">Linguagem</span>
+            </article>
+
+            <article data-experimento="priming-mascara">
+                <h3>Facilitação com máscara</h3>
+                <p>Analisa o processamento semântico inconsciente com estímulo subliminar.</p>
+                <span class="badge">Linguagem</span>
+            </article>
+
+            <article data-experimento="fonemas">
+                <h3>Detecção de fonemas</h3>
+                <p>Avalia o tempo de resposta na identificação de sons específicos da fala.</p>
+                <span class="badge">Linguagem</span>
+            </article>
+
+            <article data-experimento="percepcao-categorica">
+                <h3>Percepção categórica</h3>
+                <p>Demonstra como o cérebro agrupa sons contínuos em categorias fonéticas.</p>
+                <span class="badge">Percepção</span>
+            </article>
+
+            <article data-experimento="mcgurk">
+                <h3>Efeito McGurk</h3>
+                <p>Demonstra a ilusão gerada pela interação entre a visão e a audição na fala.</p>
+                <span class="badge">Percepção Multissensorial</span>
+            </article>
+
+            <article data-experimento="leitura-autocadenciada">
+                <h3>Leitura auto-cadenciada</h3>
+                <p>Mede o tempo de processamento palavra por palavra em frases complexas.</p>
+                <span class="badge">Psicolinguística</span>
+            </article>
+
+            <article data-experimento="imagens-mentais">
+                <h3>Imagens mentais</h3>
+                <p>Avalia como representações visuais mentais auxiliam na compreensão de frases.</p>
+                <span class="badge">Cognição</span>
+            </article>
+        </section>
+    </main>
+
+    <div id="container-experimento" class="container" style="display: none;"></div>
+
+    <footer class="site-footer">
+        <div class="container" style="padding: 0;">
+            <p>© Grupo de Pesquisa e Extensão em Psicologia Experimental e Cognitiva. Todos os direitos reservados.</p>
+            <p>Universidade do Estado de Minas Gerais</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
