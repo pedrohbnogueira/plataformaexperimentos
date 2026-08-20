@@ -38,23 +38,35 @@ body {
 }
 
 /* ==========================================================================
-   Header e Seção Hero (Ajustado para Duas Colunas com Logotipo)
+   Header e Seção Hero (Comprimento e Altura Originais Mantidos)
    ========================================================================== */
 .site-header {
     background-color: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
-    padding: 40px 0;
+    padding: 25px 0; /* Ajustado para restaurar a altura compacta original */
 }
 
 .header-grid {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; /* Alinhamento central exato entre imagens e textos */
+    justify-content: space-between;
     gap: 40px;
 }
 
+.header-logo,
+.header-logo-right {
+    flex: 0 0 auto; /* Impede a expansão vertical desnecessária */
+    display: flex;
+    align-items: center;
+}
+
 .header-logo {
-    flex-shrink: 0;
+    justify-content: flex-start;
+}
+
+.header-logo-right {
+    justify-content: flex-end;
 }
 
 .logo-universidade {
@@ -64,7 +76,7 @@ body {
 }
 
 .hero-section {
-    flex-grow: 1;
+    flex: 1; /* Ocupa suavemente o centro entre as logos */
 }
 
 .hero-section h1 {
@@ -87,6 +99,10 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+    }
+    .header-logo,
+    .header-logo-right {
+        justify-content: center;
     }
     .logo-universidade {
         max-width: 180px;
@@ -412,4 +428,82 @@ body {
     font-size: 0.85rem;
     color: #57606A;
     text-align: center;
+}
+
+/* ==========================================================================
+   ESTILO DA SEÇÃO DINÂMICA DA EQUIPE DE PROJETO (Isolado e Harmonizado)
+   ========================================================================== */
+.membros-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.membro-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--border-color);
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+/* Regra de hover removida do .membro-card para manter o fundo e borda estáticos */
+
+.membro-foto-wrapper {
+    flex-shrink: 0;
+}
+
+.membro-foto {
+    width: 140px;            /* Largura padronizada */
+    height: 185px;           /* Altura retangular proporcional */
+    border-radius: 12px;     /* Cantos suavemente arredondados */
+    object-fit: cover;       /* Preenche a área retangular mantendo a proporção */
+    object-position: center top; /* Garante o enquadramento adequado do rosto */
+    border: 1px solid var(--border-color);
+    background-color: var(--light-bg);
+    display: block;
+}
+
+.membro-info {
+    flex-grow: 1;
+}
+
+.membro-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.membro-cargo {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.membro-info p {
+    font-size: 0.92rem;
+    color: #57606A;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .membro-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .membro-info p {
+        text-align: center;
+    }
 }

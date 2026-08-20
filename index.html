@@ -11,12 +11,15 @@
     <header class="site-header">
         <div class="container header-grid">
             <div class="header-logo">
-                <img src="logo_uemg.png" alt="Logo UEMG - Universidade do Estado de Minas Gerais" class="logo-universidade" />
+                <img src="Imagens/logo_uemg.png" alt="Logo UEMG - Universidade do Estado de Minas Gerais" class="logo-universidade" />
             </div>
             <section class="hero-section">
                 <h1>Plataforma de Experimentos Digitais em Psicologia</h1>
                 <p class="hero-description">Ambiente digital para investigação, aplicação e análise de processos psicológicos básicos.</p>
             </section>
+            <div class="header-logo-right">
+                <img src="Imagens/Logo LAPICOG 2.png" alt="Logo LAPICOG - Laboratório de Psicometria e Intervenções Cognitivas" class="logo-universidade" />
+            </div>
         </div>
     </header>
 
@@ -27,12 +30,12 @@
         </section>
 
         <section class="painel-institucional">
-            <a href="#equipe" class="card-institucional" id="link-equipe">
+            <a href="#container-experimento" class="card-institucional" id="link-equipe">
                 <div class="icon-wrapper">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                         <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M23 21v-2a4 4 0 0-3-3.87"></path>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>
                 </div>
@@ -88,7 +91,107 @@
                 </div>
             </div>
         </section>
+    </div>
 
+    <main class="container" id="conteudo-principal">
+        <h2 class="section-title">Coleção de Experimentos</h2>
+        <section class="features-section">
+            
+            <a href="./labirinto" style="text-decoration: none; color: inherit;">
+                <article data-experimento="labirinto">
+                    <h3>Labirinto</h3>
+                    <p>Investiga a navegação espacial e a formação de mapas cognitivos cegos.</p>
+                    <span class="badge">Cognição Espacial</span>
+                </article>
+            </a>
+
+            <article data-experimento="stroop">
+                <h3>Efeito Stroop</h3>
+                <p>Avalia a interferência cognitiva e o tempo de reação ao conflito.</p>
+                <span class="badge">Funções Executivas</span>
+            </article>
+
+            <article data-experimento="brilho">
+                <h3>Limiar de detecção de brilho</h3>
+                <p>Determina o menor nível de intensidade de luz percebido pelo participante.</p>
+                <span class="badge">Percepção</span>
+            </article>
+
+            <article data-experimento="priming-semantico">
+                <h3>Facilitação (priming) semântica</h3>
+                <p>Mede a velocidade de processamento de palavras conceitualmente ligadas.</p>
+                <span class="badge">Linguagem</span>
+            </article>
+
+            <article data-experimento="percepcao-categorica">
+                <h3>Percepção categórica</h3>
+                <p>Demonstra como o cérebro agrupa sons contínuos em categorias fonéticas.</p>
+                <span class="badge">Percepção</span>
+            </article>
+
+            <article data-experimento="fonemas">
+                <h3>Detecção de fonemas</h3>
+                <p>Avalia o tempo de resposta na identificação de sons específicos da fala.</p>
+                <span class="badge">Linguagem</span>
+            </article>
+
+            <article data-experimento="imagens-mentais">
+                <h3>Imagens mentais</h3>
+                <p>Avalia como representações visuais mentais auxiliam na compreensão de frases.</p>
+                <span class="badge">Cognição</span>
+            </article>
+
+            <article data-experimento="posner">
+                <h3>Paradigma das Pistas de Posner</h3>
+                <p>Mede a atenção visual e o processamento de pistas espaciais.</p>
+                <span class="badge">Atenção</span>
+            </article>
+
+            <article data-experimento="stroop-emocional">
+                <h3>Efeito Stroop Emocional</h3>
+                <p>Mede a interferência de palavras com forte carga emocional na atenção.</p>
+                <span class="badge">Emoção e Cognição</span>
+            </article>
+
+            <article data-experimento="dot-probe">
+                <h3>Tarefa "dot-probe"</h3>
+                <p>Avalia o viés atencional frente a stimuli visuais ameaçadores.</p>
+                <span class="badge">Atenção</span>
+            </article>
+
+            <article data-experimento="sperling">
+                <h3>Tarefa de Sperling</h3>
+                <p>Investiga a capacidade e a duração do registro na memória icônica.</p>
+                <span class="badge">Memória</span>
+            </article>
+
+            <article data-experimento="drm">
+                <h3>Paradigma DRM</h3>
+                <p>Estuda a criação de falsas memórias por meio de listas de palavras associadas.</p>
+                <span class="badge">Memória</span>
+            </article>
+
+            <article data-experimento="priming-mascara">
+                <h3>Facilitação com máscara</h3>
+                <p>Analisa o processamento semântico inconsciente com estímulo subliminar.</p>
+                <span class="badge">Linguagem</span>
+            </article>
+
+            <article data-experimento="mcgurk">
+                <h3>Efeito McGurk</h3>
+                <p>Demonstra a ilusão gerada pela interação entre a visão e a audição na fala.</p>
+                <span class="badge">Percepção Multissensorial</span>
+            </article>
+
+            <article data-experimento="leitura-autocadenciada">
+                <h3>Leitura auto-cadenciada</h3>
+                <p>Mede o tempo de processamento palavra por palavra em frases complexas.</p>
+                <span class="badge">Psicolinguística</span>
+            </article>
+        </section>
+    </main>
+
+    <div class="container" id="secao-ferramentas-container">
         <section id="ferramentas" class="tools-section">
             <h2 class="section-title">Ferramentas de Análise & Pesquisa</h2>
             <div class="tools-grid">
@@ -123,102 +226,6 @@
             </div>
         </section>
     </div>
-
-    <main class="container" id="conteudo-principal">
-        <h2 class="section-title">Experimentos</h2>
-        <section class="features-section">
-            
-            <article data-experimento="posner">
-                <h3>Paradigma das Pistas de Posner</h3>
-                <p>Mede a atenção visual e o processamento de pistas espaciais.</p>
-                <span class="badge">Atenção</span>
-            </article>
-
-            <article data-experimento="stroop">
-                <h3>Efeito Stroop</h3>
-                <p>Avalia a interferência cognitiva e o tempo de reação ao conflito.</p>
-                <span class="badge">Funções Executivas</span>
-            </article>
-
-            <article data-experimento="stroop-emocional">
-                <h3>Efeito Stroop Emocional</h3>
-                <p>Mede a interferência de palavras com forte carga emocional na atenção.</p>
-                <span class="badge">Emoção e Cognição</span>
-            </article>
-
-            <article data-experimento="dot-probe">
-                <h3>Tarefa &quot;dot-probe&quot;</h3>
-                <p>Avalia o viés atencional frente a stimuli visuais ameaçadores.</p>
-                <span class="badge">Atenção</span>
-            </article>
-
-            <article data-experimento="brilho">
-                <h3>Limiar de detecção de brilho</h3>
-                <p>Determina o menor nível de intensidade de luz percebido pelo participante.</p>
-                <span class="badge">Percepção</span>
-            </article>
-
-            <article data-experimento="labirinto">
-                <h3>Labirinto escuro</h3>
-                <p>Investiga a navegação espacial e a formação de mapas cognitivos cegos.</p>
-                <span class="badge">Cognição Espacial</span>
-            </article>
-
-            <article data-experimento="sperling">
-                <h3>Tarefa de Sperling</h3>
-                <p>Investiga a capacidade e a duração do registro na memória icônica.</p>
-                <span class="badge">Memória</span>
-            </article>
-
-            <article data-experimento="drm">
-                <h3>Paradigma DRM</h3>
-                <p>Estuda a criação de falsas memórias por meio de listas de palavras associadas.</p>
-                <span class="badge">Memória</span>
-            </article>
-
-            <article data-experimento="priming-semantico">
-                <h3>Facilitação (priming) semântica</h3>
-                <p>Mede a velocidade de processamento de palavras conceitualmente ligadas.</p>
-                <span class="badge">Linguagem</span>
-            </article>
-
-            <article data-experimento="priming-mascara">
-                <h3>Facilitação com máscara</h3>
-                <p>Analisa o processamento semântico inconsciente com estímulo subliminar.</p>
-                <span class="badge">Linguagem</span>
-            </article>
-
-            <article data-experimento="fonemas">
-                <h3>Detecção de fonemas</h3>
-                <p>Avalia o tempo de resposta na identificação de sons específicos da fala.</p>
-                <span class="badge">Linguagem</span>
-            </article>
-
-            <article data-experimento="percepcao-categorica">
-                <h3>Percepção categórica</h3>
-                <p>Demonstra como o cérebro agrupa sons contínuos em categorias fonéticas.</p>
-                <span class="badge">Percepção</span>
-            </article>
-
-            <article data-experimento="mcgurk">
-                <h3>Efeito McGurk</h3>
-                <p>Demonstra a ilusão gerada pela interação entre a visão e a audição na fala.</p>
-                <span class="badge">Percepção Multissensorial</span>
-            </article>
-
-            <article data-experimento="leitura-autocadenciada">
-                <h3>Leitura auto-cadenciada</h3>
-                <p>Mede o tempo de processamento palavra por palavra em frases complexas.</p>
-                <span class="badge">Psicolinguística</span>
-            </article>
-
-            <article data-experimento="imagens-mentais">
-                <h3>Imagens mentais</h3>
-                <p>Avalia como representações visuais mentais auxiliam na compreensão de frases.</p>
-                <span class="badge">Cognição</span>
-            </article>
-        </section>
-    </main>
 
     <div id="container-experimento" class="container" style="display: none;"></div>
 
