@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const secaoFerramentas = document.getElementById('secao-ferramentas-container');
     const containerExperimento = document.getElementById('container-experimento');
     const linkEquipe = document.getElementById('link-equipe');
+    const linkContato = document.getElementById('link-contato'); // Captura o elemento de Contato
 
     // Monitora o clique em cada um dos cards de experimentos
     artigos.forEach(artigo => {
@@ -157,18 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
 
-                        <div class="membro-card">
-                            <div class="membro-foto-wrapper">
-                                <img src="Imagens/Fotos - equipe/Ana Carolina.jpeg" alt="Ana Carolina Lopes da Silva" class="membro-foto" onerror="this.src='https://placehold.co/150x150?text=Ana+Carolina'"/>
-                            </div>
-                            <div class="membro-info">
-                                <h3>Ana Carolina Lopes da Silva</h3>
-                                <span class="membro-cargo">Pesquisa</span>
-                                <p>Graduanda em Psicologia pela Universidade do Estado de Minas Gerais (UEMG), Unidade Divinópolis. Bolsista de Iniciação Científica (PIBIC/FAPEMIG) no projeto “Folha Não Fala, Mas Sabe Curar: multinaturalismo e cura integral com ervas nas tradições afro-indígenas”, na área de Antropologia. Integrante voluntária do projeto de pesquisa “Replicando Clássicos da Psicologia Experimental: uma coleção digital de experimentos online para aulas práticas”. Além disso, atuou como monitora da disciplina de Processos Psicológicos Básicos I.</p>
-                                <a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=ED498E509086E8F673923BBAC5F9EC9A.buscatextual_0" target="_blank" class="tool-link">Currículo Lattes ↗</a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
@@ -186,6 +175,141 @@ document.addEventListener('DOMContentLoaded', () => {
                 voltarParaLista();
             });
             document.getElementById('btn-voltar-equipe-rodape').addEventListener('click', (evt) => {
+                evt.preventDefault();
+                voltarParaLista();
+            });
+        });
+    }
+
+    // Evento dinâmico para a página de Contato e Suporte
+    if (linkContato) {
+        linkContato.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Oculta a visualização padrão inicial
+            secaoApresentacao.style.display = 'none';
+            conteudoPrincipal.style.display = 'none';
+            if (secaoFerramentas) secaoFerramentas.style.display = 'none';
+
+            // Injeta a estrutura de Contato e Suporte com Formulário Web3Forms
+            containerExperimento.innerHTML = `
+                <p style="margin-bottom: 20px;">
+                    <a href="#" id="btn-voltar-contato-topo" class="tool-link">← Voltar para a página principal</a>
+                </p>
+                
+                <div class="card" style="background: var(--card-bg); padding: 35px 30px; border-left: 3px solid var(--primary-color); border-radius: 0px;">
+                    <h2 class="section-title">Contato e Suporte</h2>
+                    
+                    <p style="font-size: 1.1rem; color: var(--dark-color); font-weight: 400; margin: 20px 0 35px 0; text-align: justify;">
+                        Entre em contato para esclarecer dúvidas, apresentar sugestões ou para suporte técnico. Basta preencher o formulário abaixo.
+                    </p>
+
+                    <form id="form-contato-suporte" style="display: flex; flex-direction: column; gap: 20px; max-width: 700px;">
+                        <input type="hidden" name="access_key" value="fc84b1e8-9a63-4288-a999-3f6d732a1834">
+                        <input type="hidden" name="from_name" value="Plataforma de Experimentos UEMG">
+
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <label for="nome" style="font-weight: 600;">Nome Completo *</label>
+                            <input type="text" id="nome" name="name" required placeholder="Digite seu nome completo" 
+                                style="padding: 12px 15px; border: 1px solid #ccc; font-family: inherit; font-size: 1rem; border-radius: 0px; outline-color: var(--primary-color);">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <label for="email" style="font-weight: 600;">E-mail *</label>
+                            <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" 
+                                style="padding: 12px 15px; border: 1px solid #ccc; font-family: inherit; font-size: 1rem; border-radius: 0px; outline-color: var(--primary-color);">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <label for="assunto" style="font-weight: 600;">Assunto *</label>
+                            <select id="assunto" name="subject" required 
+                                style="padding: 12px 15px; border: 1px solid #ccc; font-family: inherit; font-size: 1rem; border-radius: 0px; outline-color: var(--primary-color); background: #fff;">
+                                <option value="" disabled selected>Selecione um assunto</option>
+                                <option value="Dúvidas sobre Experimentos">Dúvidas sobre Experimentos</option>
+                                <option value="Suporte Técnico / Erro na Plataforma">Suporte Técnico / Erro na Plataforma</option>
+                                <option value="Sugestões e Elogios">Sugestões e Elogios</option>
+                                <option value="Outros Motivos">Outros Motivos</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <label for="mensagem" style="font-weight: 600;">Mensagem *</label>
+                            <textarea id="mensagem" name="message" rows="6" required placeholder="Escreva aqui a sua mensagem detalhadamente..." 
+                                style="padding: 12px 15px; border: 1px solid #ccc; font-family: inherit; font-size: 1rem; border-radius: 0px; outline-color: var(--primary-color); resize: vertical;"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit" id="btn-enviar-contato" class="tool-link" style="background: var(--primary-color); color: #fff; border: none; padding: 12px 28px; cursor: pointer; font-size: 1rem; font-weight: 600;">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+
+                        <div id="mensagem-status" style="margin-top: 10px; display: none;"></div>
+                    </form>
+                </div>
+
+                <p style="margin-top: 25px; margin-bottom: 40px;">
+                    <a href="#" id="btn-voltar-contato-rodape" class="tool-link">← Voltar para a página principal</a>
+                </p>
+            `;
+
+            containerExperimento.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Processamento do formulário via Web3Forms sem reload
+            const formContato = document.getElementById('form-contato-suporte');
+            const statusDiv = document.getElementById('mensagem-status');
+            const btnEnviar = document.getElementById('btn-enviar-contato');
+
+            formContato.addEventListener('submit', (formEvt) => {
+                formEvt.preventDefault();
+
+                btnEnviar.disabled = true;
+                btnEnviar.innerText = 'Enviando...';
+
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#856404';
+                statusDiv.style.backgroundColor = '#fff3cd';
+                statusDiv.style.border = '1px solid #ffeeba';
+                statusDiv.style.padding = '12px 15px';
+                statusDiv.innerText = 'Processando envio da mensagem...';
+
+                const formData = new FormData(formContato);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status === 200) {
+                        statusDiv.style.color = '#155724';
+                        statusDiv.style.backgroundColor = '#d4edda';
+                        statusDiv.style.border = '1px solid #c3e6cb';
+                        statusDiv.innerText = 'Obrigado! Sua mensagem foi enviada com sucesso.';
+                        formContato.reset();
+                    } else {
+                        throw new Error(json.message || 'Erro no envio.');
+                    }
+                })
+                .catch(() => {
+                    statusDiv.style.color = '#721c24';
+                    statusDiv.style.backgroundColor = '#f8d7da';
+                    statusDiv.style.border = '1px solid #f5c6cb';
+                    statusDiv.innerText = 'Ocorreu um erro ao enviar. Verifique sua conexão e tente novamente.';
+                })
+                .finally(() => {
+                    btnEnviar.disabled = false;
+                    btnEnviar.innerText = 'Enviar Mensagem';
+                });
+            });
+
+            // Eventos para acionar o retorno em ambos os links
+            document.getElementById('btn-voltar-contato-topo').addEventListener('click', (evt) => {
+                evt.preventDefault();
+                voltarParaLista();
+            });
+            document.getElementById('btn-voltar-contato-rodape').addEventListener('click', (evt) => {
                 evt.preventDefault();
                 voltarParaLista();
             });
