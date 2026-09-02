@@ -12,82 +12,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Seleção dos elementos da interface
-    const artigos = document.querySelectorAll('.features-section article');
-    const secaoApresentacao = document.getElementById('secao-apresentacao');
-    const conteudoPrincipal = document.getElementById('conteudo-principal');
-    const secaoFerramentas = document.getElementById('secao-ferramentas-container');
+    // Seleção de todos os blocos principais do HTML
+    const secaoApresentacao = document.getElementById('sobre');
+    const painelInstitucional = document.querySelector('.painel-institucional');
+    const destaqueYoutube = document.getElementById('destaque-youtube');
+    const secaoSelecao = document.querySelector('.secao-selecao-principal');
+    const conteudoColecao = document.querySelector('.conteudo-colecao-retratil');
+    const secaoFerramentas = document.getElementById('ferramentas');
     const containerExperimento = document.getElementById('container-experimento');
+    
     const linkEquipe = document.getElementById('link-equipe');
-    const linkContato = document.getElementById('link-contato'); // Captura o elemento de Contato
+    const linkContato = document.getElementById('link-contato');
+    const linkGuiaTecnico = document.getElementById('link-guia-tecnico');
+    const artigos = document.querySelectorAll('.features-section article');
 
-    // Monitora o clique em cada um dos cards de experimentos
-    artigos.forEach(artigo => {
-        artigo.addEventListener('click', () => {
-            const idExperimento = artigo.getAttribute('data-experimento');
+    // Oculta a página principal inteira para dar lugar à tela dinâmica
+    function ocultarInicio() {
+        if (conteudoColecao) conteudoColecao.classList.remove('ativa');
+        if (secaoApresentacao) secaoApresentacao.style.display = 'none';
+        if (painelInstitucional) painelInstitucional.style.display = 'none';
+        if (destaqueYoutube) destaqueYoutube.style.display = 'none';
+        if (secaoSelecao) secaoSelecao.style.display = 'none';
+        if (secaoFerramentas) secaoFerramentas.style.display = 'none';
+    }
 
-            // Se for o Labirinto, ignora a lógica do JS e permite que o link HTML redirecione para /labirinto
-            if (idExperimento === 'labirinto') {
-                return;
-            }
+    // Restaura todas as seções originais da página inicial
+    function voltarParaLista() {
+        if (containerExperimento) {
+            containerExperimento.style.display = 'none';
+            containerExperimento.innerHTML = ''; 
+        }
 
-            const dados = conteudosExperimentos[idExperimento];
+        if (secaoApresentacao) secaoApresentacao.style.display = 'block';
+        if (painelInstitucional) painelInstitucional.style.display = 'grid';
+        if (destaqueYoutube) destaqueYoutube.style.display = 'block';
+        if (secaoSelecao) secaoSelecao.style.display = 'block';
+        if (secaoFerramentas) secaoFerramentas.style.display = 'block';
 
-            if (dados) {
-                // Esconde as seções da lista principal
-                secaoApresentacao.style.display = 'none';
-                conteudoPrincipal.style.display = 'none';
-                if (secaoFerramentas) secaoFerramentas.style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-                // Injeta a estrutura do experimento selecionado com links padronizados com o Labirinto
-                containerExperimento.innerHTML = `
-                    <p style="margin-bottom: 20px;">
-                        <a href="#" id="btn-voltar-topo" class="tool-link">← Voltar para a página principal</a>
-                    </p>
-                    <div class="card" style="background: var(--card-bg); padding: 30px; border-left: 3px solid var(--primary-color); border-radius: 0px;">
-                        <h2 style="color: var(--primary-color); margin-top:0; font-weight:700;">${dados.titulo}</h2>
-                        <div class="conteudo-dinamico">
-                            ${dados.html}
-                        </div>
-                    </div>
-                    <p style="margin-top: 25px; margin-bottom: 40px;">
-                        <a href="#" id="btn-voltar-rodape" class="tool-link">← Voltar para a página principal</a>
-                    </p>
-                `;
-
-                // Torna a seção do experimento visível
-                containerExperimento.style.display = 'block';
-
-                // Rola para o topo da página suavemente ao carregar o experimento
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                // Adiciona o evento de clique para os links "Voltar"
-                document.getElementById('btn-voltar-topo').addEventListener('click', (e) => {
-                    e.preventDefault();
-                    voltarParaLista();
-                });
-                document.getElementById('btn-voltar-rodape').addEventListener('click', (e) => {
-                    e.preventDefault();
-                    voltarParaLista();
-                });
-            } else {
-                // Mensagem amigável para experimentos ainda não disponíveis
-                alert("Este conteúdo está sendo desenvolvido e estará disponível em breve! ;)");
-            }
-        });
-    });
-
-    // Evento dinâmico para a Equipe de Projeto
+    // 1. EVENTO: Equipe de Projeto
     if (linkEquipe) {
         linkEquipe.addEventListener('click', (e) => {
             e.preventDefault();
+            ocultarInicio();
 
-            // Oculta a visualização padrão inicial
-            secaoApresentacao.style.display = 'none';
-            conteudoPrincipal.style.display = 'none';
-            if (secaoFerramentas) secaoFerramentas.style.display = 'none';
-
-            // Injeta o conteúdo estruturado da equipe com links padronizados conforme o Labirinto
             containerExperimento.innerHTML = `
                 <p style="margin-bottom: 20px;">
                     <a href="#" id="btn-voltar-equipe-topo" class="tool-link">← Voltar para a página principal</a>
@@ -97,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2 class="section-title">Equipe de Projeto</h2>
                     
                     <div class="membros-grid">
-                        
                         <div class="membro-card">
                             <div class="membro-foto-wrapper">
                                 <img src="Imagens/Fotos - equipe/Daniel.jpg" alt="Daniel Márcio Rodrigues Silva" class="membro-foto" onerror="this.src='https://placehold.co/150x150?text=Daniel'"/>
@@ -105,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="membro-info">
                                 <h3>Daniel Márcio Rodrigues Silva</h3>
                                 <span class="membro-cargo">Professor coordenador</span>
-                                <p>Possui graduação em Psicologia (2003), mestrado em Linguística (2006) e doutorado em Neurociências (2015) pela Universidade Federal de Minas Gerais. Atuou como psicólogo no campo da clínica em saúde mental, em especial no atendimento à urgência psiquiátrica. Como bolsista de pós-doutorado pelo CNPq, desenvolveu pesquisa no campo da percepção da fala, na interface entre linguística, neurofisiologia e psicologia. Tem experiência na área das neurociências cognitivas, com ênfase em psicologia experimental, psicofisiologia, psicolinguística, fonética e fonologia, atuando principalmente nos seguintes temas: percepção e compreensão da linguagem, processamento auditivo, expertise humana e respostas evocadas cerebrais. Neste âmbito, adquiriu também experiência em registro e processamento de biosinais, delineamento experimental e métodos estatísticos de inferência e análise multivariada de dados. Atualmente é professor e chefe do Departamento de Psicologia da Universidade do Estado de Minas Gerais (UEMG) - Unidade Acadêmica de Divinópolis.</p>
+                                <p>Possui graduação em Psicologia (2003), mestrado em Linguística (2006) e doutorado em Neurociências (2015) pela Universidade Federal de Minas Gerais. Atuou como psicólogo no campo da clínica em saúde mental, em especial no atendimento à urgência psiquiátrica. Como bolsista de pós-doutorado pelo CNPq, desenvolveu pesquisa no campo da percepção da fala, na interface entre linguística, neurofisiologia e psicologia. Tem experiência na área das neurociências cognitivas, com ênfase em psicologia experimental, psicofisiologia, psicolinguística, fonética e fonologia, atuando principalmente nos seguintes temas: percepção e compreensão da linguagem, processamento auditivo, expertise humana e respostas evocadas cerebrais. Neste âmbito, adquiriu também experiência em registro e processamento de biosinais, delineamento experimental e métodos estatísticos de inferência e análise multivariada de dados. Atualmente é professor e chefe do Departamento de Psicologia da Universidade do Estado de Minas Gerais (UEMG) - Unidade Académica de Divinópolis.</p>
                                 <a href="http://lattes.cnpq.br/5495222737934260" target="_blank" class="tool-link">Currículo Lattes ↗</a>
                             </div>
                         </div>
@@ -157,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <a href="http://lattes.cnpq.br/3711959574961791" target="_blank" class="tool-link">Currículo Lattes ↗</a>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -169,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
             containerExperimento.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Eventos para acionar o retorno em ambos os links
             document.getElementById('btn-voltar-equipe-topo').addEventListener('click', (evt) => {
                 evt.preventDefault();
                 voltarParaLista();
@@ -181,17 +148,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Evento dinâmico para a página de Contato e Suporte
+    // 2. EVENTO: Contato e Suporte
     if (linkContato) {
         linkContato.addEventListener('click', (e) => {
             e.preventDefault();
+            ocultarInicio();
 
-            // Oculta a visualização padrão inicial
-            secaoApresentacao.style.display = 'none';
-            conteudoPrincipal.style.display = 'none';
-            if (secaoFerramentas) secaoFerramentas.style.display = 'none';
-
-            // Injeta a estrutura de Contato e Suporte com Formulário Web3Forms
             containerExperimento.innerHTML = `
                 <p style="margin-bottom: 20px;">
                     <a href="#" id="btn-voltar-contato-topo" class="tool-link">← Voltar para a página principal</a>
@@ -256,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
             containerExperimento.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Processamento do formulário via Web3Forms sem reload
             const formContato = document.getElementById('form-contato-suporte');
             const statusDiv = document.getElementById('mensagem-status');
             const btnEnviar = document.getElementById('btn-enviar-contato');
@@ -304,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            // Eventos para acionar o retorno em ambos os links
             document.getElementById('btn-voltar-contato-topo').addEventListener('click', (evt) => {
                 evt.preventDefault();
                 voltarParaLista();
@@ -316,13 +276,111 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Função para restaurar a interface original do site
-    function voltarParaLista() {
-        containerExperimento.style.display = 'none';
-        containerExperimento.innerHTML = ''; 
+    // 3. EVENTO: Guia Técnico
+    if (linkGuiaTecnico) {
+        linkGuiaTecnico.addEventListener('click', (e) => {
+            e.preventDefault();
+            ocultarInicio();
 
-        secaoApresentacao.style.display = 'block';
-        conteudoPrincipal.style.display = 'block';
-        if (secaoFerramentas) secaoFerramentas.style.display = 'block';
+            containerExperimento.innerHTML = `
+                <p style="margin-bottom: 20px;">
+                    <a href="#" id="btn-voltar-guia-topo" class="tool-link">← Voltar para a página principal</a>
+                </p>
+                
+                <div class="card" style="background: var(--card-bg); padding: 35px 30px; border-left: 3px solid var(--primary-color); border-radius: 0px;">
+                    <h2 class="section-title">Guia Técnico de Utilização</h2>
+                    
+                    <p style="font-size: 1.1rem; color: var(--dark-color); font-weight: 400; margin: 20px 0 25px 0; text-align: justify;">
+                        Abaixo você pode visualizar o manual de utilização da plataforma de forma interativa. Caso prefira guardar uma cópia no seu dispositivo, utilize a opção de download abaixo.
+                    </p>
+                    
+                    <p style="margin-bottom: 25px;">
+                        <a href="Documentos/Guia_Tecnico_Roteiro.pdf" download="Guia_Tecnico_Roteiro.pdf" class="secondary-button" style="text-decoration: none; display: inline-block;">
+                            📥 Baixar Guia Técnico (PDF)
+                        </a>
+                    </p>
+
+                    <div class="pdf-container-wrapper" style="position: relative; width: 100%; height: 75vh; border: 1px solid var(--border-color); background-color: var(--light-bg);">
+                        <iframe src="Documentos/Guia_Tecnico_Roteiro.pdf" class="pdf-iframe" style="width: 100%; height: 100%; border: none;" title="Visualizador do Guia Técnico">
+                            <p style="padding: 20px; text-align: center;">Seu navegador não suporta a exibição direta de PDFs. <a href="Documentos/Guia_Tecnico_Roteiro.pdf" download>Clique aqui para baixar o arquivo.</a></p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <p style="margin-top: 25px; margin-bottom: 40px;">
+                    <a href="#" id="btn-voltar-guia-rodape" class="tool-link">← Voltar para a página principal</a>
+                </p>
+            `;
+
+            containerExperimento.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            document.getElementById('btn-voltar-guia-topo').addEventListener('click', (evt) => {
+                evt.preventDefault();
+                voltarParaLista();
+            });
+            document.getElementById('btn-voltar-guia-rodape').addEventListener('click', (evt) => {
+                evt.preventDefault();
+                voltarParaLista();
+            });
+        });
+    }
+
+    // 4. EVENTO: Cards de Experimentos
+    artigos.forEach(artigo => {
+        artigo.addEventListener('click', (e) => {
+            const idExperimento = artigo.getAttribute('data-experimento');
+
+            if (idExperimento === 'labirinto') return;
+
+            const dados = conteudosExperimentos[idExperimento];
+
+            if (dados) {
+                ocultarInicio();
+
+                containerExperimento.innerHTML = `
+                    <p style="margin-bottom: 20px;">
+                        <a href="#" id="btn-voltar-topo" class="tool-link">← Voltar para a página principal</a>
+                    </p>
+                    <div class="card" style="background: var(--card-bg); padding: 30px; border-left: 3px solid var(--primary-color); border-radius: 0px;">
+                        <h2 style="color: var(--primary-color); margin-top:0; font-weight:700;">${dados.titulo}</h2>
+                        <div class="conteudo-dinamico">
+                            ${dados.html}
+                        </div>
+                    </div>
+                    <p style="margin-top: 25px; margin-bottom: 40px;">
+                        <a href="#" id="btn-voltar-rodape" class="tool-link">← Voltar para a página principal</a>
+                    </p>
+                `;
+
+                containerExperimento.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                document.getElementById('btn-voltar-topo').addEventListener('click', (evt) => {
+                    evt.preventDefault();
+                    voltarParaLista();
+                });
+                document.getElementById('btn-voltar-rodape').addEventListener('click', (evt) => {
+                    evt.preventDefault();
+                    voltarParaLista();
+                });
+            } else {
+                alert("Este conteúdo está sendo desenvolvido e estará disponível em breve! ;)");
+            }
+        });
+    });
+
+    // 5. EVENTO: Expandir/Recolher a Coleção de Experimentos
+    const gatilhoColecao = document.getElementById('gatilho-colecao');
+
+    if (gatilhoColecao && conteudoColecao) {
+        gatilhoColecao.addEventListener('click', (e) => {
+            e.preventDefault();
+            conteudoColecao.classList.toggle('ativa');
+        });
+
+        gatilhoColecao.addEventListener('mouseenter', () => {
+            conteudoColecao.classList.add('ativa');
+        });
     }
 });
