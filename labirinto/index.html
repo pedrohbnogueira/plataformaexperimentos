@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- 1) CABEÇALHO IDÊNTICO À PÁGINA-MÃE (ORIGINAL) -->
+    <!-- 1) CABEÇALHO IDÊNTICO À PÁGINA-MÃE -->
     <header class="site-header">
         <div class="container header-grid">
             <div class="header-logo">
@@ -36,9 +36,9 @@
         
         <div class="card" style="background: var(--card-bg); padding: 35px 30px; border-left: 3px solid var(--primary-color); border-radius: 0px;">
             
-            <!-- 2) TÍTULO: "Experimento do" EM AZUL E "LABIRINTO" NO VERMELHO DAS PALAVRAS-CHAVE DA PÁGINA INICIAL -->
+            <!-- 2) TÍTULO -->
             <h2 class="section-title" style="color: var(--primary-color);">
-                Experimento do <span style="color: var(--secondary-color, #c53030);">LABIRINTO</span>
+                O Experimento do Labirinto Escuro
             </h2>
 
             <!-- 3) SUBTÍTULO: GUIA TEÓRICO-METODOLÓGICO -->
@@ -51,19 +51,29 @@
                 </p>
 
                 <p style="margin-bottom: 1rem; text-indent: 2rem;">
-                    Segundo Newell e Simon (1972), o enfrentamento de um problema em que precisamos sair de um estado inicial para alcançar um objetivo final revelado ou especificado, ativa uma estratégia cognitiva padrão (heurística) em nosso cérebro, denominada Análise de Meios e Fins, que consiste em avaliar constantemente a distância entre o seu estado atual e o estado de meta (o objetivo final), dividir as etapas de resolução em submetas e escolher ações (operadores) que reduzam essa distância progressivamente.
+                    Segundo Newell e Simon (1972), o enfrentamento de um problema em que precisamos sair de um estado inicial para alcançar um objetivo final bem especificado, ativa uma estratégia cognitiva padrão denominada Análise de Meios e Fins, que consiste em avaliar constantemente a distância entre o seu estado atual e o estado de meta (o objetivo final), dividir as etapas de resolução em submetas e escolher ações (operadores) que reduzam essa distância progressivamente.
                 </p>
 
                 <p style="margin-bottom: 1rem; text-indent: 2rem;">
-                    Embora seja uma ferramenta cognitiva comumente utilizada para atingir um objetivo prático imediato, há problemas em que aplicar a Análise de Meios e Fins pode prejudicar a busca por uma solução. Partindo dessa constatação, Sweller e Levine (1982) propuseram o denominado Experimento do Labirinto (<em>“Maze-tracing Experiment”</em>) para testar o comportamento dos participantes ao tentar identificar o caminho correto até a saída de um labirinto, comparando-se as diferenças comportamentais quando o local da saída é revelado (meta especificada) e quando ele não é revelado (meta não especificada).
+                    Embora seja uma ferramenta cognitiva comumente utilizada para atingir um objetivo prático imediato, há problemas em que aplicar a Análise de Meios e Fins pode prejudicar a busca por uma solução. Partindo dessa constatação, Sweller e Levine (1982) propuseram o denominado Experimento do Labirinto (<em>Maze-tracing Experiment</em>) para observar o comportamento dos participantes ao tentar encontrar o caminho correto até a saída de um labirinto, comparando-se o desempenho entre a condição de <strong>meta especificada</strong> (local da saída revelado no início) e a condição de <strong>meta não especificada</strong> (local da saída não revelado). O detalhe crucial é que o labirinto foi elaborado de maneira a tornar a Análise de Meios e Fins uma estratégia inadequada para se buscar a saída.
+                </p>
+
+                <!-- FIGURA 1: ESQUEMA DO LABIRINTO (Ajustada a posição conforme novo fluxo textual) -->
+                <figure style="margin: 2rem 0; text-align: center;">
+                    <img src="../labirinto/imagens-labirinto/esquema-labirinto.jpg" 
+                         alt="Adaptado de Sweller e Levine (1982, p. 467)" 
+                         style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
+                    <figcaption style="font-size: 0.875rem; color: #666; margin-top: 0.5rem; font-style: italic;">
+                        Adaptado de Sweller e Levine (1982, p. 467)
+                    </figcaption>
+                </figure>
+
+                <p style="margin-bottom: 1rem; text-indent: 2rem;">
+                    O intuito dos pesquisadores era testar a seguinte hipótese: na condição de meta especificada, a Análise de Meios e Fins será ativada, sendo a atenção atraída para a saída e para o cálculo de “distância até o alvo”; na condição de meta não especificada, a Análise de Meios e Fins não pode ser empregada, dando lugar a outra estratégia (e.g., tentativa e erro), em que o indivíduo analisa os feedbacks de cada erro e acerto, induzindo regras gerais sobre o caminho a ser percorrido.
                 </p>
 
                 <p style="margin-bottom: 1rem; text-indent: 2rem;">
-                    O intuito dos pesquisadores era testar se a meta específica, revelada, ativaria a heurística da Análise de Meios e Fins, ao atrair a atenção para a saída, como objetivo final, e provocar um enfoque dos participantes no cálculo de “distância até o alvo”, ou se, na ausência de um objetivo visualmente exposto, o cérebro abandonaria a Análise de Meios e Fins e passaria a adotar a estratégia baseada na testagem de hipóteses (tentativa e erro), em que o indivíduo analisa os feedbacks de cada erro e acerto, induzindo regras gerais sobre o funcionamento do sistema ou, nesse caso, do caminho a se percorrido.
-                </p>
-
-                <p style="margin-bottom: 1rem; text-indent: 2rem;">
-                    Os experimentos foram realizados pelos autores em formato físico, em que os participantes permaneciam vendados e utilizavam um labirinto cortado em uma placa de plástico rígido, cujo caminho consistia em uma linha principal com várias ramificações perpendiculares, e em formato digital, em que os participantes não viam o desenho das paredes do labirinto.
+                    Os experimentos foram realizados pelos autores em formato físico, em que os participantes permaneciam vendados e percorriam um labirinto traçado em relevo em uma placa de plástico rígido, cujo caminho consistia em uma linha principal com várias ramificações perpendiculares, e em formato digital, no qual os participantes percorreram um caminho virtual, pelo uso das setas direcionais do teclado, sem visualizar o desenho das paredes do labirinto na tela.
                 </p>
 
                 <p style="margin-bottom: 1rem; text-indent: 2rem;">
@@ -72,10 +82,10 @@
 
                 <ul style="margin-left: 2rem; margin-bottom: 1.5rem; list-style-type: disc;">
                     <li style="margin-bottom: 0.8rem;">
-                        <strong>Grupo com meta especificada (<em>“Goal Specific”</em>):</strong> com a identificação do ponto de chegada (pelo toque da mão não dominante, no formato físico, e pela indicação de um quadrado na tela, no formato digital);
+                        <strong>Grupo com meta especificada:</strong> com a identificação do ponto de chegada (pelo toque da mão não dominante, no formato físico, e pela indicação de um quadrado na tela, no formato digital);
                     </li>
                     <li style="margin-bottom: 0.8rem;">
-                        <strong>Grupo com meta não especificada (<em>“Nonspecific Goal”</em>):</strong> não havia nenhuma indicação de onde ficava o ponto final. Apenas explorava os caminhos possíveis, até o ponto de chegada.
+                        <strong>Grupo com meta não especificada:</strong> não havia nenhuma indicação de onde ficava o ponto final. Apenas explorava os caminhos possíveis, até o ponto de chegada.
                     </li>
                 </ul>
 
@@ -95,40 +105,73 @@
                     Em que pesem as diferenças encontradas, em ambos os formatos os resultados apontaram para a mesma conclusão: o conhecimento prévio de metas específicas pode dificultar a resolução de problemas.
                 </p>
 
-                <h4 style="color: var(--primary-color); margin: 2rem 0 1rem 0; font-weight: 600; font-size: 1.15rem;">A versão apresentada</h4>
+                <h4 style="color: var(--primary-color); margin: 2rem 0 1rem 0; font-weight: 600; font-size: 1.15rem;">A nossa versão</h4>
 
                 <p style="margin-bottom: 1rem; text-indent: 2rem;">
-                    A versão do experimento do labirinto em formato digital, apresentada neste projeto, foi adaptada a partir do formato original criado por Sweller e Levine (1982, p. 467), e é representada pelo desenho abaixo:
+                    A versão do experimento do labirinto em formato digital, apresentada nesta coleção, foi adaptada a partir do formato original criado por Sweller e Levine (1982, p. 467), e é representada pelo desenho abaixo:
                 </p>
-
-                <!-- INSERÇÃO DA IMAGEM 1 (DESENHO DO LABIRINTO) -->
-                <figure style="margin: 2rem 0; text-align: center;">
-                    <img src="../labirinto/imagens-labirinto/esquema-labirinto.jpg" 
-                         alt="Desenho estrutural do labirinto adaptado" 
-                         style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-                    <figcaption style="font-size: 0.875rem; color: #666; margin-top: 0.5rem; font-style: italic;">
-                        Figura 1: Esquema da versão adaptada do labirinto digital
-                    </figcaption>
-                </figure>
 
                 <p style="margin-bottom: 1rem; text-indent: 2rem;">
-                    Os participantes devem percorrer o caminho seguindo um dos sentidos para cima, baixo, esquerda ou direita, utilizando-se das setas do teclado de seu computador. O caminho foi disposto por meio de imagens que simulam um labirinto escuro, sem que os participantes consigam enxergar todas as paredes, conforme imagem abaixo:
+                    Os participantes devem percorrer o caminho seguindo um dos sentidos para cima, baixo, esquerda ou direita, utilizando-se das setas do teclado de seu computador. O caminho foi disposto por meio de imagens que simulam um labirinto escuro, sem que os participantes consigam enxergar todas as paredes, conforme imagens abaixo:
                 </p>
 
-                <!-- INSERÇÃO DA IMAGEM DO CAMINHO DO LABIRINTO -->
+                <!-- FIGURA 2: IMAGEM DO CAMINHO DO LABIRINTO -->
                 <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
                     <figure style="flex: 1; min-width: 250px; max-width: 400px; margin: 0; text-align: center;">
                         <img src="../labirinto/imagens-labirinto/caminho-labirinto.jpg" 
-                             alt="Caminho do labirinto durante o percurso" 
+                             alt="Visualização durante o percurso no labirinto" 
                              style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-                        <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem; font-style: italic;">
-                            Figura 2: Visualização durante o percurso no labirinto
-                        </figcaption>
                     </figure>
                 </div>
 
                 <p style="margin-bottom: 1.5rem; text-indent: 2rem;">
                     Assim como no experimento original, ao alcançar os dois corredores longos no final do labirinto, o participante é automaticamente conduzido até o próximo ponto de conversão - tal como seria possível em um labirinto real, quando não encontraria obstáculos à sua frente, ao percorrer as duas retas.
+                </p>
+
+                <h4 style="color: var(--primary-color); margin: 2rem 0 1rem 0; font-weight: 600; font-size: 1.15rem;">Descrição dos dados</h4>
+
+                <p style="margin-bottom: 1rem; text-indent: 2rem;">
+                    Os dados individuais fornecidos pelo Psytoolkit são organizados em uma tabela, sem indicar o que as linhas e colunas representam. Nesse experimento, as linhas da tabela correspondem a cada vez que o participante pressiona um dos botões de resposta (setas para cima, baixo, esquerda e direita). As sete colunas da tabela são as seguintes:
+                </p>
+
+                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Coluna “grupo”:</strong> indica em qual dos dois grupos o participante foi testado (meta especificada ou meta não especificada);</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Coluna “cliques”:</strong> quantidade cumulativa de pressões dos botões de resposta (setas para cima, baixo, esquerda, direita);</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Coluna “movimentos”:</strong> quantidade cumulativa de movimentos no labirinto;</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Coluna “botão”:</strong> indica o botão de resposta que foi pressionado. Os códigos 1, 2, 3 e 4 representam, respectivamente, os botões de seta “para cima”, “para baixo”, “esquerda” e “direita”;</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Coluna “x”:</strong> coordenada horizontal da localização do personagem;</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Coluna “y”:</strong> coordenada vertical da localização do personagem;</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Coluna “Tempo de resposta”:</strong> tempo entre o último clique e o clique anterior (ou o início da tarefa).</li>
+                </ul>
+
+                <!-- FIGURA 3: Figura demonstrativa dos dados estatísticos -->
+                <figure style="margin: 2rem 0; text-align: center;">
+                    <img src="../labirinto/imagens-labirinto/tabela-dados.jpg" 
+                        alt="Figura demonstrativa dados"
+                        style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
+                </figure>
+
+                <p style="margin-bottom: 1rem; text-indent: 2rem;">
+                    A figura das coordenadas do labirinto mostra que as coordenadas do início são [x = 1; y = 1]; as coordenadas da saída são [x = -4; y = 3]. Assim, a tabela traz informações sobre o comportamento do participante no labirinto. No experimento, quando o personagem chega à posição [x = -4; y = -7], ele é transportado automaticamente para a saída. Por isso, a linha da tabela com os valores <em>-4</em> e <em>-7</em> nas colunas <strong>x</strong> e <strong>y</strong> será necessariamente a última. Nessa linha, a coluna “movimentos” traz a principal medida do experimento: o número de movimentos que o participante realizou para chegar à saída. De fato, para a análise principal, precisaremos apenas desse número e do grupo em que o participante foi testado.
+                </p>
+
+                <h4 style="color: var(--primary-color); margin: 2rem 0 1rem 0; font-weight: 600; font-size: 1.15rem;">Análise dos dados</h4>
+
+                <p style="margin-bottom: 1rem; text-indent: 2rem;">
+                    Como no estudo original, manipulamos a especificidade da meta ao estabelecer dois grupos de diferentes participantes a serem comparados: <strong>meta especificada</strong> × </strong>meta não especificada</strong>. Assim, para observar o efeito dessa manipulação sobre o número de movimentos, basta comparar os dois grupos. Vale notar que a atribuição dos participantes aos grupos não foi idêntica à apresentada no estudo original. Aqui, cada participante é atribuído aleatoriamente a um dos dois grupos antes de iniciar a tarefa, sem que sejam considerados os demais participantes. Essa é uma forma de simplificar a coleta de dados, ao preço de não dividir o número de participantes igualmente entre os grupos.
+                </p>
+
+                <p style="margin-bottom: 1rem; text-indent: 2rem;">
+                    Para verificar se os dois grupos diferem significativamente, empregaremos o teste U de Mann-Whitney. A razão dessa escolha é que:
+                </p>
+
+                <ul style="margin-left: 2rem; margin-bottom: 1.5rem; list-style-type: disc;">
+                    <li style="margin-bottom: 0.5rem;">não esperamos que a <strong>variável dependente</strong> (número de movimentos) apresente distribuição normal (gaussiana);</li>
+                    <li style="margin-bottom: 0.5rem;">a comparação de interesse é realizada entre dois grupos independentes – em outras palavras, a <strong>variável preditora</strong> “especificidade da meta” é um fator entre-participantes com dois níveis.</li>
+                </ul>
+
+                <p style="margin-bottom: 1.5rem; text-indent: 2rem;">
+                    O teste U de Mann-Whitney é um teste <strong>não-paramétrico</strong> para duas amostras independentes, baseado na ordenação dos dados (<em>rankings</em>), que não faz suposições rígidas sobre sua distribuição ou sobre parâmetros como média e desvio padrão. Isso garante robustez diante de assimetrias na distribuição dos dados, como aquelas causadas por uma concentração maior de casos com um número de movimentos acima do que de casos com um número de movimentos abaixo da média.
                 </p>
 
                 <h4 style="color: var(--primary-color); margin: 2.5rem 0 1rem 0; font-weight: 600; font-size: 1.15rem;">REFERÊNCIAS</h4>
@@ -150,7 +193,7 @@
 
             <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 2.5rem 0;" />
 
-            <!-- 4) TÍTULO E BOTÃO-LINK: VAMOS EXPERIMENTAR? COM DOWNLOAD DO ARQUIVO -->
+            <!-- 4) TÍTULO E BOTÃO-LINK: VAMOS EXPERIMENTAR? -->
             <h3 style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">Vamos experimentar?</h3>
             <p style="margin-bottom: 1.5rem;">
                 <a href="../labirinto/Arquivo-labirinto.html" download="experimento-labirinto.html" id="link-teste-experimento" class="secondary-button" style="text-decoration: none; display: inline-block;">

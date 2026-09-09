@@ -684,3 +684,98 @@ body {
         padding: 25px 20px;
     }
 }
+
+/* ==========================================================================
+   Estilização dos Logos de Apoio no Rodapé
+   ========================================================================== */
+.rodape-apoio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.rodape-apoio span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.logo-apoio {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   Estilização do Menu Horizontal do Cabeçalho (Centralizado & Elegante)
+   ========================================================================== */
+.header-nav {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza todos os itens do menu */
+    align-items: center;
+    gap: 12px 24px;         /* Espaçamento proporcional entre os links */
+}
+
+.header-nav li {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Adiciona um separador discreto (•) entre os itens do menu */
+.header-nav li:not(:last-child)::after {
+    content: "•";
+    margin-left: 24px;
+    color: #ccc;
+    font-size: 0.8rem;
+    pointer-events: none;
+}
+
+.header-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 4px 0;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+/* Linha animada ao passar o mouse */
+.header-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.25s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.header-nav a:hover {
+    color: var(--accent-color);
+}
+
+.header-nav a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .header-nav li:not(:last-child)::after {
+        display: none; /* Oculta as bolinhas no celular para um ajuste limpo */
+    }
+}

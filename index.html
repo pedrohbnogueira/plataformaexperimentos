@@ -16,7 +16,20 @@
             </div>
             <section class="hero-section">
                 <h1>Plataforma de Experimentos Digitais em Psicologia</h1>
-                <p class="hero-description">Ambiente digital para investigação, aplicação e análise de processos psicológicos básicos.</p>
+                <p class="hero-description">Ambiente de aprendizagem, investigação e análise de experimentos digitais em Psicologia</p>
+
+                <!-- MENU HORIZONTAL DO CABEÇALHO -->
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="#container-experimento" id="nav-equipe">Equipe de Projeto</a></li>
+                        <li><a href="#" id="nav-forum" onclick="event.preventDefault(); alert('O Fórum Interativo está em fase de estruturação e será liberado em breve!');">Fórum Interativo</a></li>
+                        <li><a href="#container-experimento" id="nav-contato">Contato & Suporte</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=H-7FsUDOrvE" target="_blank" id="nav-youtube">Canal no YouTube</a></li>
+                        <li><a href="#container-experimento" id="nav-guia-tecnico">Guia Técnico de Utilização</a></li>
+                        <li><a href="#gatilho-colecao" id="nav-colecao">Coleção de Experimentos</a></li>
+                        <li><a href="#ferramentas" id="nav-ferramentas">Ferramentas de Análise & Pesquisa</a></li>
+                    </ul>
+                </nav>
             </section>
             <div class="header-logo-right">
                 <img src="Imagens/Logo LAPICOG 2.png" alt="Logo LAPICOG - Laboratório de Psicometria e Intervenções Cognitivas" class="logo-universidade" />
@@ -31,7 +44,7 @@
             <!-- APRESENTAÇÃO -->
             <section id="sobre" class="presentation-section">
                 <h2 class="section-title">Apresentação</h2>
-                <p>Explore nossa biblioteca de tarefas experimentais, guias interativos e materiais de apoio voltados para o ensino e aprendizagem de processos psicológicos básicos. Desenvolvido para dar suporte a pesquisadores, estudantes e participantes de experimentos.</p>
+                <p>Explore nossa coleção de experimentos digitais, ambientes de interação e materiais de apoio voltados para a experimentação em Psicologia</p>
             </section>
 
             <!-- PAINEL INSTITUCIONAL -->
@@ -41,13 +54,13 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                             <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0-3-3.87"></path>
+                            <path d="M23 21v-2a4 4 0 0 3-3.87"></path>
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                     </div>
                     <div class="card-content">
                         <h3>Equipe de Projeto</h3>
-                        <p>Conheça os docentes, pesquisadores e desenvolvedores responsáveis pela plataforma.</p>
+                        <p>Conheça os coordenadores, pesquisadores e extensionistas responsáveis pela plataforma.</p>
                     </div>
                 </a>
 
@@ -82,7 +95,7 @@
                 <div class="youtube-grid">
                     <div class="youtube-info">
                         <h2 class="section-title">Nosso Canal no YouTube</h2>
-                        <p>Acompanhe as produções audiovisuais do nosso grupo de pesquisa. Publicamos periodicamente conteúdos educativos fundamentais para a sua formação acadêmica, incluindo tutoriais passo a passo sobre a utilização das ferramentas, guias detalhados de análises estatísticas e apresentações de experimentos e artigos científicos desenvolvidos pela nossa comunidade da UEMG.</p>
+                        <p>Acompanhe as produções audiovisuais da nossa equipe. Publicamos, periodicamente, conteúdos voltados à aprendizagem e investigação científica relacionados à experimentação em Psicologia, incluindo tutoriais para a utilização das ferramentas, aplicação de experimentos e análise de dados estatísticos, trabalhos em andamento e outros assuntos de interesse.</p>
                         <a href="https://www.youtube.com/watch?v=H-7FsUDOrvE" target="_blank" class="main-youtube-link">Visitar Canal Oficial →</a>
                     </div>
                     <div class="youtube-video-side">
@@ -102,21 +115,21 @@
             <!-- CAIXAS DE SELEÇÃO PRINCIPAIS -->
             <section class="secao-selecao-principal">
                 <div class="grade-selecao">
-                    <!-- Caixa 1: Coleção de Experimentos -->
-                    <div class="card-selecao-trigger" id="gatilho-colecao">
-                        <div class="card-selecao-conteudo">
-                            <h2 class="section-title">Coleção de Experimentos</h2>
-                            <p>Passe o mouse aqui para explorar nossa biblioteca de tarefas experimentais interativas.</p>
-                            <span class="seta-indicadora">↓</span>
-                        </div>
-                    </div>
-
-                    <!-- Caixa 2: Guia Técnico de Utilização -->
+                    <!-- Caixa 1: Guia Técnico de Utilização -->
                     <div class="card-selecao-trigger" id="link-guia-tecnico">
                         <div class="card-selecao-conteudo">
                             <h2 class="section-title">Guia Técnico de Utilização</h2>
-                            <p>Clique aqui para acessar o manual completo em PDF com orientações de uso e aplicação.</p>
+                            <p>Clique aqui para acessar o Guita Técnico em PDF, com orientações de uso e aplicação.</p>
                             <span class="seta-indicadora">→</span>
+                        </div>
+                    </div>
+
+                    <!-- Caixa 2: Coleção de Experimentos -->
+                    <div class="card-selecao-trigger" id="gatilho-colecao">
+                        <div class="card-selecao-conteudo">
+                            <h2 class="section-title">Coleção de Experimentos</h2>
+                            <p>Passe o mouse para explorar nossa coleção de experimentos digitais em Psicologia.</p>
+                            <span class="seta-indicadora">↓</span>
                         </div>
                     </div>
                 </div>
@@ -124,12 +137,11 @@
 
             <!-- COLEÇÃO DE EXPERIMENTOS RETRÁTIL -->
             <div class="conteudo-colecao-retratil">
-                <h2 class="section-title">Coleção de Experimentos</h2>
                 <section class="features-section">
                     
                     <a href="./labirinto" style="text-decoration: none; color: inherit;">
                         <article data-experimento="labirinto">
-                            <h3>Labirinto</h3>
+                            <h3>Labirinto Escuro</h3>
                             <p>Investiga a navegação espacial e a formação de mapas cognitivos cegos.</p>
                             <span class="badge">Cognição Espacial</span>
                         </article>
@@ -231,7 +243,7 @@
                             <span class="tool-tag">Execução</span>
                             <h3>PsyToolkit</h3>
                         </div>
-                        <p>Plataforma de software livre voltada para a programação e execução de experimentos psicológicos cognitivos e questionários online de alta precisão temporal.</p>
+                        <p>Software de livre acesso, voltado para a programação e execução de experimentos em Psicologia e questionários online.</p>
                         <a href="https://www.psytoolkit.org/" target="_blank" class="tool-link">Acessar PsyToolkit →</a>
                     </div>
 
@@ -240,7 +252,7 @@
                             <span class="tool-tag">Estatística</span>
                             <h3>Linguagem R</h3>
                         </div>
-                        <p>Ambiente computacional e linguagem de programação de código aberto voltada para a computação estatística, manipulação de dados e geração de gráficos de alto nível.</p>
+                        <p>Ambiente computacional e linguagem de programação de código aberto voltada para a manipulação e visualização de dados estatísticos.</p>
                         <a href="https://www.r-project.org/" target="_blank" class="tool-link">Acessar Projeto R →</a>
                     </div>
 
@@ -249,7 +261,7 @@
                             <span class="tool-tag">Estatística</span>
                             <h3>JASP</h3>
                         </div>
-                        <p>Alternativa moderna de código aberto ao SPSS. Desenvolvido na Universidade de Amsterdã, oferece uma interface gráfica amigável para análises estatísticas clássicas e bayesianas.</p>
+                        <p>Software gratuito para manipulação e visualização de dados estatísticos. Oferece uma interface gráfica amigável para análises estatísticas clássicas e bayesianas.</p>
                         <a href="https://jasp-stats.org/" target="_blank" class="tool-link">Acessar JASP →</a>
                     </div>
 
@@ -265,6 +277,11 @@
     <!-- RODAPÉ INSTITUCIONAL -->
     <footer class="site-footer">
         <div class="container" style="padding: 0;">
+            <div class="rodape-apoio">
+                <span>Apoio:</span>
+                <img src="Imagens/cnpq.logo.jpg" alt="Logo CNPq" class="logo-apoio" />
+                <img src="Imagens/fapemig.logo.jpg" alt="Logo FAPEMIG" class="logo-apoio" />
+            </div>
             <p>© Grupo de Pesquisa e Extensão em Psicologia Experimental e Cognitiva. Todos os direitos reservados.</p>
             <p>Universidade do Estado de Minas Gerais</p>
         </div>
