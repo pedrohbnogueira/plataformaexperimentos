@@ -580,15 +580,38 @@ body {
    ========================================================================== */
 
 @media (max-width: 992px) {
-    .header-grid {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
+    .site-header {
+        padding: 15px 0;
     }
 
-    .header-logo, 
+    /* Agrupa os logos no topo lado a lado para economizar espaço vertical */
+    .header-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "logo-left logo-right"
+            "hero hero";
+        gap: 15px;
+        align-items: center;
+    }
+
+    .header-logo {
+        grid-area: logo-left;
+        justify-content: flex-start;
+    }
+
     .header-logo-right {
-        justify-content: center;
+        grid-area: logo-right;
+        justify-content: flex-end;
+    }
+
+    .hero-section {
+        grid-area: hero;
+        text-align: center;
+    }
+
+    .logo-universidade {
+        max-width: 130px;
     }
 
     .youtube-grid {
@@ -598,7 +621,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* Garante recuo interno padronizado para que NENHUM elemento encoste na borda da tela */
     .container {
         width: 100%;
         padding-left: 16px;
@@ -606,23 +628,38 @@ body {
     }
 
     .site-header {
-        padding: 20px 0;
+        padding: 12px 0;
     }
 
-    .logo-universidade {
-        max-width: 160px;
+    /* Esconde a descrição secundária do cabeçalho em telas pequenas */
+    .hero-description {
+        display: none;
     }
 
     .hero-section h1 {
-        font-size: 1.4rem;
+        font-size: 1.15rem;
+        margin-bottom: 5px;
     }
 
-    .hero-description {
-        font-size: 0.95rem;
+    .header-nav {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .header-nav ul {
+        gap: 8px 12px;
+    }
+
+    .header-nav a {
+        font-size: 0.82rem;
+    }
+
+    .header-nav li:not(:last-child)::after {
+        display: none;
     }
 
     .presentation-section {
-        padding: 30px 0 20px 0;
+        padding: 20px 0 15px 0;
     }
 
     .presentation-section p,
@@ -631,7 +668,7 @@ body {
     .card-ferramenta p,
     .features-section p,
     .membro-info p {
-        text-align: left; /* Evita falhas de espaçamento do justify em telas finas */
+        text-align: left;
     }
 
     .painel-institucional,

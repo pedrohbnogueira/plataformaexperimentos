@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         containerExperimento.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         document.getElementById('btn-voltar-equipe-topo').addEventListener('click', (evt) => {
             evt.preventDefault();
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         containerExperimento.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         const formContato = document.getElementById('form-contato-suporte');
         const statusDiv = document.getElementById('mensagem-status');
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         containerExperimento.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         document.getElementById('btn-voltar-guia-topo').addEventListener('click', (evt) => {
             evt.preventDefault();
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 1. EVENTOS DE CLIQUE NA PÁGINA E NO MENU
+    // EVENTOS DE CLIQUE NA PÁGINA E NO MENU
     if (linkEquipe) linkEquipe.addEventListener('click', (e) => { e.preventDefault(); abrirEquipe(); });
     if (navEquipe) navEquipe.addEventListener('click', (e) => { e.preventDefault(); abrirEquipe(); });
 
@@ -358,51 +358,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. EVENTO: Cards de Experimentos
+    // EVENTO: Cards de Experimentos (Requisição via AJAX/Fetch)
     artigos.forEach(artigo => {
         artigo.addEventListener('click', (e) => {
             const idExperimento = artigo.getAttribute('data-experimento');
 
-            if (idExperimento === 'labirinto') return;
+            // Aponta para a pasta experimetos/ com base na sua estrutura de pastas
+            const caminhoArquivo = `experimentos/${idExperimento}.html`;
 
-            const dados = conteudosExperimentos[idExperimento];
+            fetch(caminhoArquivo)
+                .then(response => {
+                    if (!response.ok) throw new Error('Arquivo não encontrado');
+                    return response.text();
+                })
+                .then(htmlConteudo => {
+                    ocultarInicio();
 
-            if (dados) {
-                ocultarInicio();
-
-                containerExperimento.innerHTML = `
-                    <p style="margin-bottom: 20px;">
-                        <a href="#" id="btn-voltar-topo" class="tool-link">← Voltar para a página principal</a>
-                    </p>
-                    <div class="card" style="background: var(--card-bg); padding: 30px; border-left: 3px solid var(--primary-color); border-radius: 0px;">
-                        <h2 style="color: var(--primary-color); margin-top:0; font-weight:700;">${dados.titulo}</h2>
-                        <div class="conteudo-dinamico">
-                            ${dados.html}
+                    containerExperimento.innerHTML = `
+                        <p style="margin-bottom: 20px;">
+                            <a href="#" id="btn-voltar-topo" class="tool-link">← Voltar para a página principal</a>
+                        </p>
+                        <div class="card" style="background: var(--card-bg); padding: 30px; border-left: 3px solid var(--primary-color); border-radius: 0px;">
+                            ${htmlConteudo}
                         </div>
-                    </div>
-                    <p style="margin-top: 25px; margin-bottom: 40px;">
-                        <a href="#" id="btn-voltar-rodape" class="tool-link">← Voltar para a página principal</a>
-                    </p>
-                `;
+                        <p style="margin-top: 25px; margin-bottom: 40px;">
+                            <a href="#" id="btn-voltar-rodape" class="tool-link">← Voltar para a página principal</a>
+                        </p>
+                    `;
 
-                containerExperimento.style.display = 'block';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                    containerExperimento.style.display = 'block';
+                    containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-                document.getElementById('btn-voltar-topo').addEventListener('click', (evt) => {
-                    evt.preventDefault();
-                    voltarParaLista();
+                    document.getElementById('btn-voltar-topo').addEventListener('click', (evt) => {
+                        evt.preventDefault();
+                        voltarParaLista();
+                    });
+                    document.getElementById('btn-voltar-rodape').addEventListener('click', (evt) => {
+                        evt.preventDefault();
+                        voltarParaLista();
+                    });
+                })
+                .catch(() => {
+                    alert("Este conteúdo está sendo desenvolvido e estará disponível em breve! ;)");
                 });
-                document.getElementById('btn-voltar-rodape').addEventListener('click', (evt) => {
-                    evt.preventDefault();
-                    voltarParaLista();
-                });
-            } else {
-                alert("Este conteúdo está sendo desenvolvido e estará disponível em breve! ;)");
-            }
         });
     });
 
-    // 5. EVENTO: Expandir/Recolher a Coleção de Experimentos
+    // EVENTO: Expandir/Recolher a Coleção de Experimentos
     const gatilhoColecao = document.getElementById('gatilho-colecao');
 
     if (gatilhoColecao && conteudoColecao) {
