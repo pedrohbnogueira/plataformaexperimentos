@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const artigos = document.querySelectorAll('.features-section article');
 
     // Elementos do Menu Superior
+    const navInicio = document.getElementById('nav-inicio');
     const navEquipe = document.getElementById('nav-equipe');
     const navContato = document.getElementById('nav-contato');
     const navGuiaTecnico = document.getElementById('nav-guia-tecnico');
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         containerExperimento.style.display = 'block';
-        containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
         document.getElementById('btn-voltar-equipe-topo').addEventListener('click', (evt) => {
             evt.preventDefault();
@@ -218,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         containerExperimento.style.display = 'block';
-        containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
         const formContato = document.getElementById('form-contato-suporte');
         const statusDiv = document.getElementById('mensagem-status');
@@ -312,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         containerExperimento.style.display = 'block';
-        containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
         document.getElementById('btn-voltar-guia-topo').addEventListener('click', (evt) => {
             evt.preventDefault();
@@ -325,6 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // EVENTOS DE CLIQUE NA PÁGINA E NO MENU
+    if (navInicio) navInicio.addEventListener('click', (e) => { e.preventDefault(); voltarParaLista(); });
+
     if (linkEquipe) linkEquipe.addEventListener('click', (e) => { e.preventDefault(); abrirEquipe(); });
     if (navEquipe) navEquipe.addEventListener('click', (e) => { e.preventDefault(); abrirEquipe(); });
 
@@ -363,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
         artigo.addEventListener('click', (e) => {
             const idExperimento = artigo.getAttribute('data-experimento');
 
-            // Aponta para a pasta experimetos/ com base na sua estrutura de pastas
+            // Aponta para a pasta experimentos/ com base na sua estrutura de pastas
             const caminhoArquivo = `experimentos/${idExperimento}.html`;
 
             fetch(caminhoArquivo)
@@ -387,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
 
                     containerExperimento.style.display = 'block';
-                    containerExperimento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
 
                     document.getElementById('btn-voltar-topo').addEventListener('click', (evt) => {
                         evt.preventDefault();
